@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H5播放器</title>
+</head>
+<body>
+  <video id="videoElement" width="600" height="400" muted controls></video>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.5.0/flv.min.js"></script>
+  <script>
+    if (flvjs.isSupported()) {
+        var videoElement = document.getElementById('videoElement');
+        var flvPlayer = flvjs.createPlayer({
+            type: 'flv',
+            url: 'http://play-test.sisicrm.com/live/699423057462963456.flv?txSecret=8e54a4c63c6c4d73b2eb1d3cd2087351&txTime=5E94E14C'
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        flvPlayer.play();
+    }
+  </script>
+</body>
+</html>
